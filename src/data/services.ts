@@ -28,6 +28,10 @@ export interface ServiceData {
   faqs: FAQ[];
   seoTitle: string;
   seoDescription: string;
+  primaryCtaLabel?: string;
+  primaryCtaHref?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
 }
 
 export const services: ServiceData[] = [
@@ -35,259 +39,358 @@ export const services: ServiceData[] = [
     slug: "home-doctor",
     title: "Home Doctor",
     shortDescription:
-      "Qualified doctors visit your home for consultations, check-ups, and follow-up care.",
+      "Expert medical care at home for consultations, follow-ups, and everyday health needs.",
     icon: "doctor",
-    heroTitle: "Doctor Visits At Home",
+    heroTitle: "Doctor at Home",
     heroSubtitle:
-      "Get professional medical consultations without leaving your home. Our doctors provide thorough examinations and personalized care plans.",
+      "Get professional doctor consultations and medical care without the hassle of visiting a hospital.",
     description:
-      "CuroAid connects you with experienced general physicians and specialists who visit your home for consultations, health assessments, and follow-up care. Whether you need a routine check-up, post-surgery review, or medical advice for a family member who cannot travel, our home doctor service brings quality healthcare to your doorstep.",
+      "At CuroAid, we believe quality healthcare should be accessible, convenient, and centred around the patient. Our Home Doctor Service brings professional medical expertise to your doorstep, with personalised care tailored to your individual health needs.",
     features: [
       {
-        title: "General Consultations",
+        title: "General Physician Consultation",
         description:
-          "Comprehensive health evaluations including vitals, symptom assessment, and treatment recommendations.",
+          "Get medical consultation at home for common illnesses, symptoms, and everyday health concerns.",
       },
       {
-        title: "Follow-Up Visits",
+        title: "Elderly Care at Home",
         description:
-          "Scheduled follow-up appointments to monitor recovery progress and adjust treatment plans.",
+          "Personalised medical support for senior citizens who may find travelling to a clinic difficult.",
       },
       {
-        title: "Prescription & Reports",
+        title: "Chronic Disease Management",
         description:
-          "Doctors provide prescriptions, medical certificates, and guidance on further tests if needed.",
+          "Regular monitoring and medical guidance for conditions such as diabetes, hypertension, and other long-term health concerns.",
       },
       {
-        title: "Chronic Condition Management",
+        title: "Post-Hospitalization Care",
         description:
-          "Regular monitoring and management support for diabetes, hypertension, and other chronic conditions.",
+          "Receive medical follow-up and support at home during your recovery after hospital discharge.",
+      },
+      {
+        title: "Follow-Up Doctor Visits",
+        description:
+          "Continue your treatment and monitor your recovery with convenient follow-up consultations at home.",
+      },
+      {
+        title: "Preventive Health Check-ups",
+        description:
+          "Stay proactive about your health with routine medical assessments and personalised health guidance.",
+      },
+      {
+        title: "Medication Review & Guidance",
+        description:
+          "Get professional guidance regarding your ongoing medications and treatment plan.",
+      },
+      {
+        title: "Family Healthcare Support",
+        description:
+          "Convenient medical care for individuals and families, delivered in the comfort of home.",
       },
     ],
     benefits: [
-      "Avoid hospital waiting rooms and travel discomfort",
-      "Ideal for elderly patients, post-operative recovery, and mobility limitations",
-      "One-on-one attention in a comfortable home environment",
-      "Flexible scheduling including evenings and weekends",
+      "Healthcare That Comes to You",
+      "Medical Care Designed Around You",
+      "Comfortable Care at Home",
+      "Personalised Attention",
+      "Convenient & Hassle-Free",
+      "Care for Every Stage",
+      "Trusted Healthcare Support",
     ],
     howItWorks: [
       {
         step: 1,
-        title: "Book an Appointment",
+        title: "Login / Sign Up",
         description:
-          "Call us or fill out the contact form with your preferred date, time, and medical concern.",
+          "Log in to your CuroAid account or create a new account to get started.",
       },
       {
         step: 2,
-        title: "Doctor Assignment",
+        title: "Choose Your Service",
         description:
-          "We match you with a qualified doctor based on your location and healthcare needs.",
+          "Select Doctor at Home and provide the required details about your healthcare needs.",
       },
       {
         step: 3,
-        title: "Home Visit",
+        title: "Select Date & Time",
         description:
-          "The doctor arrives at your home with necessary equipment for examination and consultation.",
+          "Choose your preferred date and convenient time slot for the home visit.",
       },
       {
         step: 4,
-        title: "Care Plan & Follow-Up",
+        title: "Confirm Your Booking",
         description:
-          "Receive prescriptions, recommendations, and optional follow-up visit scheduling.",
+          "Review your appointment details and confirm your home doctor booking.",
       },
     ],
     faqs: [
       {
-        question: "What types of conditions can a home doctor treat?",
+        question: "What is included in a home doctor consultation?",
         answer:
-          "Home doctors handle general consultations, fever, infections, chronic disease follow-ups, post-surgery reviews, and wellness check-ups. For emergencies or conditions requiring hospital equipment, they will recommend appropriate hospital care.",
+          "A home doctor consultation generally includes a medical assessment, review of symptoms, basic examination, prescription guidance, and follow-up recommendations. If your condition requires additional tests or a hospital referral, the doctor will advise you appropriately.",
       },
       {
-        question: "How quickly can a doctor be arranged?",
+        question: "Can I book a home doctor for elderly family members?",
         answer:
-          "Same-day or next-day appointments are typically available depending on your location and doctor availability. Urgent requests are prioritized when possible.",
+          "Yes. Our home doctor service is especially helpful for elderly patients, post-surgery recovery, and individuals who find travel difficult. A doctor can assess, advise, and coordinate care at home.",
       },
       {
-        question: "Do home doctors carry medical equipment?",
+        question: "Is a home doctor visit suitable for chronic disease care?",
         answer:
-          "Yes, doctors bring essential diagnostic tools such as stethoscopes, blood pressure monitors, thermometers, and pulse oximeters for basic examinations.",
+          "Yes. Follow-up consultations and medical monitoring for chronic conditions can be handled more conveniently at home, with ongoing guidance for treatment and recovery.",
       },
     ],
-    seoTitle: "Home Doctor Visit Services | CuroAid",
+    seoTitle: "Doctor at Home | CuroAid",
     seoDescription:
-      "Book qualified doctors for home visits with CuroAid. General consultations, follow-ups, and chronic care management delivered at your doorstep.",
+      "Expert doctor consultations at home for general care, chronic disease support, elderly care, and follow-up treatment with CuroAid.",
+    primaryCtaLabel: "App Download",
+    primaryCtaHref: "/contact",
+    secondaryCtaLabel: "Book Now",
+    secondaryCtaHref: "/contact",
   },
   {
     slug: "nursing-services",
     title: "Nursing Services",
     shortDescription:
-      "Skilled nurses for patient care, medication administration, and daily health monitoring at home.",
+      "Compassionate nursing support at home for recovery, chronic care, and daily health needs.",
     icon: "nursing",
-    heroTitle: "Professional Nursing At Home",
+    heroTitle: "Home Nursing Services",
     heroSubtitle:
-      "Trained and qualified nurses provide compassionate patient care, medication management, and health monitoring in the comfort of your home.",
+      "Professional Nursing Care, Right at Your Doorstep\n\nGet compassionate and professional nursing support at home, tailored to your health needs and delivered in the comfort of your own surroundings.",
     description:
-      "Our nursing services bring qualified healthcare professionals to your home for patient care, post-operative support, medication administration, wound dressing, and daily health monitoring. CuroAid nurses are trained to handle diverse care needs with professionalism and compassion.",
+      "At CuroAid, we believe quality healthcare should extend beyond hospitals and clinics. Our Home Nursing Service provides professional nursing support at your doorstep, helping patients receive the care, comfort, and attention they need at home.\n\nWhether you need short-term nursing assistance, post-hospitalisation support, elderly care, or ongoing healthcare supervision, our services are designed around your individual needs.",
     features: [
       {
-        title: "Patient Care",
+        title: "Elderly Nursing Care",
         description:
-          "Assistance with daily activities, mobility support, hygiene, and comfort care for bedridden patients.",
+          "Compassionate nursing support for senior citizens who require assistance with their healthcare and daily needs at home.",
       },
       {
-        title: "Medication Management",
+        title: "Post-Hospitalization Nursing Care",
         description:
-          "Timely administration of prescribed medications, injections, and IV therapy under medical guidance.",
+          "Receive professional nursing assistance after hospital discharge to support a safe and comfortable recovery at home.",
       },
       {
-        title: "Vital Monitoring",
+        title: "Chronic Disease Care",
         description:
-          "Regular tracking of blood pressure, temperature, pulse, oxygen levels, and other vital signs.",
+          "Ongoing nursing support for patients managing long-term conditions such as diabetes, hypertension, and other chronic health concerns.",
       },
       {
-        title: "Post-Operative Care",
+        title: "Post-Surgical Care",
         description:
-          "Specialized nursing support during recovery after surgery, including wound care and mobility assistance.",
+          "Get dedicated nursing assistance during the recovery period following surgery, including routine monitoring and care support.",
+      },
+      {
+        title: "Medication Assistance",
+        description:
+          "Professional support with medication schedules and administration as prescribed by your doctor.",
+      },
+      {
+        title: "Wound & Dressing Care",
+        description:
+          "Receive appropriate nursing support for wound care, dressing changes, and recovery-related healthcare needs at home.",
+      },
+      {
+        title: "Vital Signs Monitoring",
+        description:
+          "Regular monitoring of essential health parameters such as blood pressure, temperature, pulse, and oxygen levels as required.",
+      },
+      {
+        title: "Personal Care Assistance",
+        description:
+          "Support with everyday personal care needs for individuals who require additional assistance during recovery or due to limited mobility.",
+      },
+      {
+        title: "Bedridden Patient Care",
+        description:
+          "Compassionate nursing support for patients who are bedridden and require regular attention and assistance at home.",
+      },
+      {
+        title: "Family Healthcare Support",
+        description:
+          "Reliable nursing assistance that helps families manage the healthcare needs of their loved ones with greater comfort and confidence.",
       },
     ],
     benefits: [
-      "Continuous professional care without hospital admission",
-      "Reduced risk of hospital-acquired infections",
-      "Personalized one-on-one attention for patients",
-      "Family members receive guidance and peace of mind",
+      "Professional Nursing Support",
+      "Personalised Care",
+      "Comfortable Home Environment",
+      "Support for Recovery",
+      "Care for Elderly & Dependent Patients",
+      "Convenient & Reliable",
     ],
     howItWorks: [
       {
         step: 1,
-        title: "Share Care Requirements",
+        title: "Login / Sign Up",
         description:
-          "Tell us about the patient's condition, care needs, and preferred schedule.",
+          "Log in to your CuroAid account or create a new account to get started.",
       },
       {
         step: 2,
-        title: "Nurse Matching",
+        title: "Choose Your Service",
         description:
-          "We assign a qualified nurse experienced in your specific care requirements.",
+          "Select Home Nursing Services and provide the required details about the patient's healthcare needs.",
       },
       {
         step: 3,
-        title: "Care Begins",
+        title: "Select Date & Time",
         description:
-          "The nurse starts providing care at your home according to the agreed schedule.",
+          "Choose your preferred date and convenient time slot for the nursing service.",
       },
       {
         step: 4,
-        title: "Regular Updates",
+        title: "Confirm Your Booking",
         description:
-          "Receive care reports and coordination with doctors as needed for ongoing treatment.",
+          "Review the service details and confirm your home nursing booking.",
       },
     ],
     faqs: [
       {
-        question: "Can I hire a nurse for short-term or long-term care?",
+        question: "What kinds of nursing care are available at home?",
         answer:
-          "Yes, we offer both short-term nursing for post-operative recovery and long-term care arrangements for chronic conditions or elderly patients.",
+          "We provide elder care nursing, post-hospitalisation nursing, chronic disease management, wound and dressing care, vital signs monitoring, and personal care assistance for patients needing ongoing support at home.",
       },
       {
-        question: "Are your nurses qualified and verified?",
+        question: "Can nursing care be arranged for bedridden patients?",
         answer:
-          "All CuroAid nurses hold valid nursing qualifications and undergo background verification before assignment.",
+          "Yes. We provide compassionate nursing care for bedridden patients, including regular monitoring, personal assistance, and overall support to improve comfort and recovery.",
       },
       {
-        question: "What shifts are available?",
+        question: "Do you support families with long-term home nursing needs?",
         answer:
-          "We offer flexible shifts including 8-hour, 12-hour, and 24-hour live-in nursing care based on patient needs.",
+          "Yes. CuroAid offers nursing support tailored for both short-term recovery and ongoing care, helping families manage healthcare needs more comfortably and confidently at home.",
       },
     ],
     seoTitle: "Home Nursing Services | CuroAid",
     seoDescription:
-      "Hire skilled nurses for home patient care, medication management, and post-operative support with CuroAid's professional nursing services.",
+      "Professional nursing care at home for elderly support, post-hospitalisation recovery, chronic disease care, medication assistance, and family healthcare support.",
+    primaryCtaLabel: "App Download",
+    primaryCtaHref: "/contact",
+    secondaryCtaLabel: "Book Now",
+    secondaryCtaHref: "/contact",
   },
   {
     slug: "physiotherapy",
     title: "Physiotherapy",
     shortDescription:
-      "Licensed physiotherapists for pain relief, rehabilitation, and mobility improvement at home.",
+      "Professional physiotherapy at home for pain relief, mobility, and recovery support.",
     icon: "physio",
-    heroTitle: "Physiotherapy At Home",
+    heroTitle: "Physiotherapy at Home",
     heroSubtitle:
-      "Recover faster with personalized physiotherapy sessions delivered by licensed therapists in your own space.",
+      "Professional Physiotherapy, Right at Your Doorstep\n\nGet personalised physiotherapy care at home with professional support designed to improve mobility, manage pain, build strength, and support a comfortable recovery in familiar surroundings.",
     description:
-      "CuroAid's physiotherapy service brings licensed physiotherapists to your home for pain management, post-injury rehabilitation, stroke recovery, and mobility improvement. Sessions are tailored to your condition, home environment, and recovery goals.",
+      "At CuroAid, we make physiotherapy more convenient by bringing professional rehabilitation support directly to your home. Our Physiotherapy at Home Service is designed to help individuals recover, improve movement, manage pain, and regain independence without the need for frequent visits to a clinic.\n\nWhether you are recovering from an injury, surgery, illness, or dealing with mobility difficulties, our physiotherapy services are tailored to your individual condition, goals, and recovery needs.",
     features: [
+      {
+        title: "Post-Surgical Physiotherapy",
+        description:
+          "Professional physiotherapy support following surgery to help improve mobility, strength, flexibility, and overall recovery.",
+      },
+      {
+        title: "Injury Rehabilitation",
+        description:
+          "Personalised rehabilitation support for individuals recovering from sports injuries, falls, strains, sprains, and other physical injuries.",
+      },
       {
         title: "Pain Management",
         description:
-          "Targeted exercises and manual therapy for back pain, joint pain, neck pain, and muscle strains.",
+          "Physiotherapy-based support to help manage common muscle, joint, and movement-related pain and improve physical comfort.",
       },
       {
-        title: "Post-Injury Rehabilitation",
+        title: "Orthopaedic Physiotherapy",
         description:
-          "Structured recovery programs after fractures, surgeries, sports injuries, and accidents.",
+          "Dedicated physiotherapy support for conditions affecting the bones, joints, muscles, and overall musculoskeletal system.",
       },
       {
-        title: "Stroke & Neuro Rehab",
+        title: "Neurological Physiotherapy",
         description:
-          "Specialized exercises to improve balance, coordination, and motor function after neurological events.",
+          "Personalised rehabilitation support for individuals experiencing movement, balance, coordination, or mobility challenges related to neurological conditions.",
       },
       {
-        title: "Mobility & Strength Training",
+        title: "Elderly Physiotherapy",
         description:
-          "Programs to improve flexibility, strength, and independence for elderly or recovering patients.",
+          "Gentle and personalised physiotherapy support for senior citizens to improve mobility, strength, balance, and independence.",
+      },
+      {
+        title: "Mobility & Balance Training",
+        description:
+          "Exercises and movement-based therapy designed to improve balance, coordination, walking ability, and confidence in daily activities.",
+      },
+      {
+        title: "Strength & Flexibility Training",
+        description:
+          "Guided exercises to help improve muscle strength, flexibility, physical function, and overall movement.",
+      },
+      {
+        title: "Stroke Rehabilitation",
+        description:
+          "Home-based physiotherapy support to help individuals work towards improving movement, balance, strength, and functional independence after a stroke.",
+      },
+      {
+        title: "Home-Based Recovery Support",
+        description:
+          "Convenient physiotherapy sessions at home to support your recovery journey while reducing the need for frequent travel to clinics or hospitals.",
       },
     ],
     benefits: [
-      "Therapy in a familiar, comfortable environment",
-      "No travel required during recovery periods",
-      "Personalized exercise plans adapted to your home setup",
-      "Consistent sessions with the same therapist for better outcomes",
+      "Professional rehabilitation support at home",
+      "Improved mobility and strength",
+      "Better pain management",
+      "Comfortable recovery in your own space",
+      "Personalised treatment based on your condition and goals",
+      "Convenient support for recovery and independence",
     ],
     howItWorks: [
       {
         step: 1,
-        title: "Initial Assessment",
+        title: "Login / Sign Up",
         description:
-          "Book a session and share your medical history, current condition, and therapy goals.",
+          "Log in to your CuroAid account or create a new account to get started.",
       },
       {
         step: 2,
-        title: "Therapist Assignment",
+        title: "Choose Your Service",
         description:
-          "We assign a licensed physiotherapist experienced in your type of condition.",
+          "Select Physiotherapy at Home and share the details of your condition or treatment needs.",
       },
       {
         step: 3,
-        title: "Home Sessions",
+        title: "Select Date & Time",
         description:
-          "The therapist conducts sessions at your home with appropriate equipment and exercises.",
+          "Choose a suitable time for your physiotherapy session at home.",
       },
       {
         step: 4,
-        title: "Progress Tracking",
+        title: "Confirm Your Booking",
         description:
-          "Regular assessments and plan adjustments to ensure steady improvement toward your goals.",
+          "Review your booking details and confirm your physiotherapy appointment.",
       },
     ],
     faqs: [
       {
-        question: "How many sessions will I need?",
+        question: "Is physiotherapy at home effective?",
         answer:
-          "The number of sessions depends on your condition and recovery goals. Your therapist will recommend a plan after the initial assessment.",
+          "Yes. Home-based physiotherapy is often highly effective because it allows treatment to be tailored to your environment, daily routine, and rehabilitation goals while reducing travel stress.",
       },
       {
-        question: "Does the therapist bring equipment?",
+        question: "Can physiotherapy help with recovery after surgery or injury?",
         answer:
-          "Therapists bring portable equipment such as resistance bands, therapy balls, and TENS units. Home-based exercises using furniture and body weight are also incorporated.",
+          "Yes. It is commonly used for post-surgical rehabilitation, injury recovery, mobility issues, and movement-related pain. A therapist will design a rehabilitation plan based on your condition.",
       },
       {
-        question: "Can physiotherapy help with chronic pain?",
+        question: "Do I need to have equipment at home for the session?",
         answer:
-          "Yes, regular physiotherapy can help manage chronic conditions like arthritis, sciatica, and repetitive strain injuries through targeted exercises and manual techniques.",
+          "Not necessarily. Most sessions use bodyweight exercises, simple mobility work, and therapist-provided tools where needed. The treatment is designed to fit your home setting.",
       },
     ],
-    seoTitle: "Home Physiotherapy Services | CuroAid",
+    seoTitle: "Physiotherapy at Home | CuroAid",
     seoDescription:
-      "Book licensed physiotherapists for home sessions. Pain relief, rehabilitation, and mobility improvement with CuroAid physiotherapy services.",
+      "Book personalized physiotherapy at home for mobility, pain management, rehabilitation, and recovery support with CuroAid.",
+    primaryCtaLabel: "App Download",
+    primaryCtaHref: "/contact",
+    secondaryCtaLabel: "Book Now",
+    secondaryCtaHref: "/contact",
   },
   {
     slug: "elder-care",

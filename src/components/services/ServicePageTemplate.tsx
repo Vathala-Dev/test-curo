@@ -10,6 +10,37 @@ interface ServicePageTemplateProps {
 }
 
 export default function ServicePageTemplate({ service }: ServicePageTemplateProps) {
+  const primaryCtaLabel = service.primaryCtaLabel ?? "Book This Service";
+  const primaryCtaHref = service.primaryCtaHref ?? "/contact";
+  const secondaryCtaLabel = service.secondaryCtaLabel ?? "View All Services";
+  const secondaryCtaHref = service.secondaryCtaHref ?? "/services";
+
+  const descriptionTitleMap: Record<string, string> = {
+    "home-doctor": "CUROAID HOME DOCTOR SERVICE",
+    "nursing-services": "CUROAID HOME NURSING SERVICE",
+    "physiotherapy": "CUROAID PHYSIOTHERAPY AT HOME SERVICE",
+  };
+
+  const featuresTitleMap: Record<string, string> = {
+    "home-doctor": "OUR HOME DOCTOR SERVICES",
+    "nursing-services": "OUR HOME NURSING SERVICES",
+    "physiotherapy": "OUR PHYSIOTHERAPY AT HOME SERVICES",
+  };
+
+  const benefitsTitleMap: Record<string, string> = {
+    "home-doctor": "WHY CHOOSE CUROAID?",
+    "nursing-services": "WHY CHOOSE CUROAID?",
+    "physiotherapy": "WHY CHOOSE CUROAID?",
+  };
+
+  const howItWorksTitleMap: Record<string, string> = {
+    "home-doctor": "HOW TO BOOK OUR HOME DOCTOR SERVICE",
+    "nursing-services": "HOW TO BOOK OUR HOME NURSING SERVICE",
+    "physiotherapy": "HOW TO BOOK OUR PHYSIOTHERAPY AT HOME SERVICE",
+  };
+
+  const isAppDownload = primaryCtaLabel === "App Download";
+
   return (
     <>
       {/* Hero */}
@@ -27,15 +58,15 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
               {service.heroTitle}
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-blue-100">
+            <p className="mt-6 text-lg leading-relaxed text-blue-100 whitespace-pre-line">
               {service.heroSubtitle}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/contact" variant="white">
-                Book This Service
+              <Button href={primaryCtaHref} variant={isAppDownload ? "white" : "white"}>
+                {primaryCtaLabel}
               </Button>
-              <Button href="/services" variant="outline" className="border-white text-white hover:bg-white/10">
-                View All Services
+              <Button href={secondaryCtaHref} variant="outline" className="border-white text-white hover:bg-white/10">
+                {secondaryCtaLabel}
               </Button>
             </div>
           </div>
@@ -46,8 +77,8 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
-            <SectionHeading title={`About ${service.title}`} centered={false} />
-            <p className="text-lg leading-relaxed text-muted">{service.description}</p>
+            <SectionHeading title={descriptionTitleMap[service.slug] ?? `About ${service.title}`} centered={false} />
+            <p className="text-lg leading-relaxed text-muted whitespace-pre-line">{service.description}</p>
           </div>
         </div>
       </section>
@@ -56,8 +87,12 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
       <section className="bg-light-blue py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="What We Offer"
-            subtitle={`Comprehensive ${service.title.toLowerCase()} tailored to your needs`}
+            title={featuresTitleMap[service.slug] ?? "What We Offer"}
+            subtitle={service.slug === "home-doctor"
+              ? "Whether you need a routine consultation, ongoing health monitoring, or medical support for a loved one, CuroAid brings professional healthcare to the comfort of your home."
+              : service.slug === "nursing-services"
+                ? "From recovery and rehabilitation to long-term healthcare support, CuroAid provides personalised nursing care to help patients and families manage healthcare needs comfortably at home."
+                : "From pain management and rehabilitation to mobility improvement and recovery support, CuroAid provides personalised physiotherapy care based on your individual healthcare needs."}
           />
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {service.features.map((feature) => (
@@ -82,8 +117,14 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="Benefits"
-            subtitle="Why choose CuroAid for this service"
+            title={benefitsTitleMap[service.slug] ?? "Benefits"}
+            subtitle={
+              service.slug === "home-doctor"
+                ? "Healthcare That Comes to You"
+                : service.slug === "nursing-services"
+                  ? "Healthcare becomes easier when professional support is available where you are most comfortable."
+                  : "Healthcare That Comes to You"
+            }
           />
           <div className="mx-auto grid max-w-4xl gap-4">
             {service.benefits.map((benefit) => (
@@ -105,8 +146,14 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
       <section className="bg-navy py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="How It Works"
-            subtitle="Simple steps to get started"
+            title={howItWorksTitleMap[service.slug] ?? "How It Works"}
+            subtitle={
+              service.slug === "home-doctor"
+                ? "Getting Medical Care at Home Is Simple"
+                : service.slug === "nursing-services"
+                  ? "Getting Nursing Care at Home Is Simple"
+                  : "Getting Physiotherapy Care at Home Is Simple"
+            }
             light
           />
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -129,7 +176,7 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
       <section className="py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="Frequently Asked Questions"
+            title={service.slug === "home-doctor" ? "FAQ" : service.slug === "nursing-services" ? "FAQ - Home Nursing Services" : "FAQ"}
             subtitle="Common questions about this service"
           />
           <FAQSection faqs={service.faqs} />
@@ -140,14 +187,22 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
       <section className="bg-gradient-to-r from-primary to-primary-dark py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
-            Ready to Get Started?
+            {service.slug === "home-doctor"
+              ? "Need Medical Care at Home?"
+              : service.slug === "nursing-services"
+                ? "NEED PROFESSIONAL NURSING CARE AT HOME?"
+                : "Need Physiotherapy Support at Home?"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-blue-100">
-            Contact us today to book {service.title.toLowerCase()} or learn more about how CuroAid can help you.
+            {service.slug === "home-doctor"
+              ? "CuroAid brings trusted healthcare to your doorstep. Book a convenient home doctor visit and take the next step towards better, more accessible healthcare."
+              : service.slug === "nursing-services"
+                ? "Compassionate Care. Professional Support. Right at Your Doorstep. CuroAid makes it easier for you and your loved ones to access reliable nursing support without leaving the comfort of home."
+                : "Professional physiotherapy support designed to help you recover, improve movement, and regain confidence in the comfort of your own home."}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button href="/contact" variant="white">
-              Contact Us
+            <Button href={primaryCtaHref} variant="white">
+              {service.slug === "home-doctor" ? "Book Free Consultation" : service.slug === "nursing-services" ? "Book Home Nursing Service" : "Book Physiotherapy Session"}
             </Button>
             <Button
               href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
