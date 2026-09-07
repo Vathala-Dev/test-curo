@@ -26,21 +26,14 @@ function htmlExcerpt(html: string, max = 200) {
   return `${stripped.slice(0, max).trim()}…`;
 }
 
-export async function fetchAllBlogs(category?: string): Promise<ApiBlog[]> {
+export async function fetchAllBlogs(): Promise<ApiBlog[]> {
   try {
     const res = await fetch(`${BASE}/users/getAllBlogs`);
     if (!res.ok) return [];
-
-    const data: ApiBlogResponse = await res.json();
-    const blogs = data.data ?? [];
-
-    if (!category) return blogs;
-
-    const normalizedCategory = category.trim().toLowerCase();
-    return blogs.filter((blog) => {
-      const blogCategory = String(blog.category ?? "").trim().toLowerCase();
-      return blogCategory === normalizedCategory;
-    });
+    // console.log("res", res);
+    const data:ApiBlogResponse = await res.json();
+    // console.log("data", data);
+    return data.data ?? [];
   } catch (e) {
     console.error("Error fetching all blogs:", e);
     return [];

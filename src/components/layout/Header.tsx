@@ -5,13 +5,11 @@ import { useState } from "react";
 import { mainNav, serviceNavItems } from "@/data/navigation";
 import { siteConfig } from "@/lib/site";
 import Button from "@/components/ui/Button";
-import BookingModal from "@/components/ui/BookingModal";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-blue-100 bg-white/95 backdrop-blur-sm">
@@ -70,7 +68,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button onClick={() => setBookingOpen(true)}>Book Now</Button>
+          <Button href="/contact">Book Now</Button>
         </div>
 
         <button
@@ -151,14 +149,12 @@ export default function Header() {
             )
           )}
           <div className="pt-2">
-            <Button onClick={() => setBookingOpen(true)} className="w-full">
+            <Button href="/contact" className="w-full">
               Book Now
             </Button>
           </div>
         </nav>
       </div>
-
-      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </header>
   );
 }
