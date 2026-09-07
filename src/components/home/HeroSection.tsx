@@ -142,7 +142,9 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import Button from "@/components/ui/Button";
+import BookingModal from "@/components/ui/BookingModal";
 
 
 const GooglePlayIcon = () => (
@@ -221,251 +223,504 @@ const FlaskIcon = () => (
 );
 
 export default function HeroSection() {
-  return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#eefaff] via-white to-[#e9f8ff]">
-      {/* Background glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 top-20 h-96 w-96 rounded-full bg-[#42aee0]/10 blur-3xl" />
-        <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-[#42aee0]/10 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[#0d83c6]/5 blur-3xl" />
-      </div>
+  const [bookingOpen, setBookingOpen] = useState(false);
 
-      <div className="relative mx-auto flex min-h-[680px] max-w-[1500px] items-center px-6 py-14 sm:px-10 lg:px-16 lg:py-20">
-        <div className="grid w-full items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-8">
-          {/* =====================================================
+  return (
+    <>
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#eefaff] via-white to-[#e9f8ff]">
+        {/* Background glow */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-32 top-20 h-96 w-96 rounded-full bg-[#42aee0]/10 blur-3xl" />
+          <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-[#42aee0]/10 blur-3xl" />
+          <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[#0d83c6]/5 blur-3xl" />
+        </div>
+
+        <div className="relative mx-auto flex min-h-[680px] max-w-[1500px] items-center px-6 py-14 sm:px-10 lg:px-16 lg:py-20">
+          <div className="grid w-full items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-8">
+            {/* =====================================================
               LEFT SIDE
           ====================================================== */}
-          <div className="relative z-10 max-w-[700px]">
-            {/* Badge */}
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-[#dff4ff] px-5 py-2.5 text-sm font-semibold text-[#258fc4]">
-              <span className="h-2.5 w-2.5 rounded-full bg-[#3aaee0]" />
-              Healthcare At Your Doorstep
-            </div>
-
-            {/* Heading */}
-            <h1 className="text-[48px] font-extrabold leading-[1.03] tracking-[-0.035em] text-[#102d49] sm:text-[58px] lg:text-[68px]">
-              Professional
-              <br />
-              Healthcare Services
-              <br />
-              <span className="text-[#38a9dc]">At Home</span>
-            </h1>
-
-            {/* Description */}
-            <p className="mt-7 max-w-[690px] text-[17px] leading-[1.65] text-[#526477] sm:text-[19px]">
-              From doctor visits and nursing to physiotherapy, elder care,
-              blood tests, and more — CuroAid delivers quality healthcare
-              services at your doorstep.
-            </p>
-
-            {/* Buttons */}
-            <div className="mt-9 flex flex-wrap items-center gap-4">
-              {/* Book Now */}
-              <Button
-                href="/contact"
-                className="rounded-xl bg-[#35a7db] px-7 py-4 text-base font-semibold shadow-lg shadow-[#35a7db]/20 transition hover:-translate-y-0.5 hover:bg-[#2699ce]"
-              >
-                Book Now
-              </Button>
-
-              {/* Google Play */}
-              <a
-                href="https://play.google.com/store/apps/details?id=com.androidVathalaUser"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-[64px] items-center gap-3 rounded-xl border border-[#dce4e9] bg-white px-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <GooglePlayIcon />
-
-                <span className="text-left leading-none">
-                  <span className="block text-[10px] font-medium uppercase tracking-[0.12em] text-[#687787]">
-                    Get it on
-                  </span>
-
-                  <span className="mt-1.5 block text-[17px] font-bold text-[#142c45]">
-                    Google Play
-                  </span>
-                </span>
-              </a>
-
-              {/* App Store */}
-              <a
-                href="https://apps.apple.com/us/app/vathala/id6474188887"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-[64px] items-center gap-3 rounded-xl border border-[#dce4e9] bg-white px-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <AppStoreIcon />
-
-                <span className="text-left leading-none">
-                  <span className="block text-[10px] font-medium uppercase tracking-[0.12em] text-[#687787]">
-                    Download on the
-                  </span>
-
-                  <span className="mt-1.5 block text-[17px] font-bold text-[#142c45]">
-                    App Store
-                  </span>
-                </span>
-              </a>
-            </div>
-          </div>
-
-          {/* =====================================================
-              RIGHT SIDE
-          ====================================================== */}
-          <div className="relative mx-auto h-[600px] w-full max-w-[700px]">
-            {/* -----------------------------------------------
-                TOP LEFT DOCTOR IMAGE
-            ------------------------------------------------ */}
-            <div className="absolute left-[3%] top-[0%] z-20 h-[190px] w-[190px] overflow-hidden rounded-full border-[4px] border-white shadow-lg">
-              <img
-                src="https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788766798126/t1.webp"
-
-
-                alt="Doctor providing healthcare"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            {/* Small floating circle */}
-            <div className="absolute left-[37%] top-[10%] z-10 h-11 w-11 rounded-full bg-[#d9f2fc]" />
-
-            {/* -----------------------------------------------
-                TOP RIGHT NURSE IMAGE
-            ------------------------------------------------ */}
-            <div className="absolute right-[3%] top-[-5%] z-10 h-[225px] w-[225px] overflow-hidden rounded-full border-[4px] border-white shadow-lg">
-              <img
-                src="https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788767301819/t2.webp"
-                alt="Nurse caring for elderly patient"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            {/* Heart floating icon */}
-            <div className="absolute right-[-1%] top-[8%] z-30 flex h-16 w-16 items-center justify-center rounded-full bg-[#dff4ff] text-white shadow-sm">
-              <HeartIcon />
-            </div>
-
-            {/* -----------------------------------------------
-                MAIN BLUE CARD
-            ------------------------------------------------ */}
-            <div className="absolute left-[20%] top-[24%] z-20 w-[76%] rounded-[30px] bg-gradient-to-br from-[#38a9dc] to-[#238fc4] p-7 text-white shadow-2xl shadow-[#238fc4]/30 sm:p-9">
-              {/* Card Header */}
-              <div className="flex items-center gap-5">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/15">
-                  <HeartIcon />
-                </div>
-
-                <div>
-                  <p className="text-sm text-[#c4ebfa]">Trusted Care</p>
-
-                  <p className="mt-1 text-xl font-bold">
-                    Home Healthcare
-                  </p>
-                </div>
+            <div className="relative z-10 max-w-[700px]">
+              {/* Badge */}
+              <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-[#dff4ff] px-5 py-2.5 text-sm font-semibold text-[#258fc4]">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#3aaee0]" />
+                Healthcare At Your Doorstep
               </div>
 
-              {/* Services */}
-              <div className="mt-7 grid grid-cols-2 gap-4">
-                {[
-                  "Doctor Visits",
-                  "Nursing Care",
-                  "Physiotherapy",
-                  "Lab Tests",
-                ].map((item) => (
+              {/* Heading */}
+              <h1 className="text-[48px] font-extrabold leading-[1.03] tracking-[-0.035em] text-[#102d49] sm:text-[58px] lg:text-[68px]">
+                Professional
+                <br />
+                Healthcare Services
+                <br />
+                <span className="text-[#38a9dc]">At Home</span>
+              </h1>
+
+              {/* Description */}
+              <p className="mt-7 max-w-[690px] text-[17px] leading-[1.65] text-[#526477] sm:text-[19px]">
+                From doctor visits and nursing to physiotherapy, elder care,
+                blood tests, and more — CuroAid delivers quality healthcare
+                services at your doorstep.
+              </p>
+
+              {/* Buttons */}
+              <div className="mt-9 flex flex-wrap items-center gap-4">
+                {/* Book Now */}
+                <Button
+                  onClick={() => setBookingOpen(true)}
+                  className="rounded-xl bg-[#35a7db] px-7 py-4 text-base font-semibold shadow-lg shadow-[#35a7db]/20 transition hover:-translate-y-0.5 hover:bg-[#2699ce]"
+                >
+                  Book Now
+                </Button>
+
+                {/* Google Play */}
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.androidVathalaUser"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-[64px] items-center gap-3 rounded-xl border border-[#dce4e9] bg-white px-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <GooglePlayIcon />
+
+                  <span className="text-left leading-none">
+                    <span className="block text-[10px] font-medium uppercase tracking-[0.12em] text-[#687787]">
+                      Get it on
+                    </span>
+
+                    <span className="mt-1.5 block text-[17px] font-bold text-[#142c45]">
+                      Google Play
+                    </span>
+                  </span>
+                </a>
+
+                {/* App Store */}
+                <a
+                  href="https://apps.apple.com/us/app/vathala/id6474188887"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-[64px] items-center gap-3 rounded-xl border border-[#dce4e9] bg-white px-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <AppStoreIcon />
+
+                  <span className="text-left leading-none">
+                    <span className="block text-[10px] font-medium uppercase tracking-[0.12em] text-[#687787]">
+                      Download on the
+                    </span>
+
+                    <span className="mt-1.5 block text-[17px] font-bold text-[#142c45]">
+                      App Store
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            {/* =====================================================
+    RIGHT SIDE - RESPONSIVE
+===================================================== */}
+            <div
+              className="
+    relative
+    mx-auto
+    h-[390px]
+    w-full
+    max-w-[500px]
+
+    sm:h-[480px]
+    sm:max-w-[600px]
+
+    lg:h-[600px]
+    lg:max-w-[700px]
+  "
+            >
+              {/* =================================================
+      DOCTOR IMAGE
+  ================================================== */}
+              <div
+                className="
+      absolute
+      left-[0%]
+      top-0
+      z-20
+
+      h-[105px]
+      w-[105px]
+
+      overflow-hidden
+      rounded-full
+      border-4
+      border-white
+      shadow-lg
+
+      sm:left-[4%]
+      sm:h-[150px]
+      sm:w-[150px]
+
+      lg:left-[3%]
+      lg:h-[190px]
+      lg:w-[190px]
+    "
+              >
+                <img
+                  src="https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788766798126/t1.webp"
+                  alt="Doctor providing healthcare"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
+              {/* Small circle */}
+              <div
+                className="
+      absolute
+      left-[38%]
+      top-[9%]
+      z-10
+      h-7
+      w-7
+      rounded-full
+      bg-[#d9f2fc]
+
+      sm:h-10
+      sm:w-10
+
+      lg:h-11
+      lg:w-11
+    "
+              />
+
+              {/* =================================================
+      NURSE IMAGE
+  ================================================== */}
+              <div
+                className="
+      absolute
+      right-[1%]
+      top-0
+      z-10
+
+      h-[120px]
+      w-[120px]
+
+      overflow-hidden
+      rounded-full
+      border-4
+      border-white
+      shadow-lg
+
+      sm:right-[3%]
+      sm:h-[175px]
+      sm:w-[175px]
+
+      lg:h-[225px]
+      lg:w-[225px]
+    "
+              >
+                <img
+                  src="https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788767301819/t2.webp"
+                  alt="Nurse caring for elderly patient"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
+              {/* Heart */}
+              <div
+                className="
+      absolute
+      right-0
+      top-[7%]
+      z-30
+
+      flex
+      h-10
+      w-10
+      items-center
+      justify-center
+
+      rounded-full
+      bg-[#dff4ff]
+      text-white
+
+      sm:h-14
+      sm:w-14
+
+      lg:h-16
+      lg:w-16
+    "
+              >
+                <HeartIcon />
+              </div>
+
+              {/* =================================================
+      MAIN BLUE CARD
+  ================================================== */}
+              <div
+                className="
+      absolute
+      left-[7%]
+      right-[3%]
+      top-[22%]
+      z-20
+
+      rounded-[22px]
+      bg-gradient-to-br
+      from-[#38a9dc]
+      to-[#238fc4]
+
+      p-5
+      text-white
+
+      shadow-2xl
+      shadow-[#238fc4]/30
+
+      sm:left-[13%]
+      sm:top-[23%]
+      sm:p-7
+
+      lg:left-[20%]
+      lg:right-auto
+      lg:top-[24%]
+      lg:w-[76%]
+      lg:rounded-[30px]
+      lg:p-8
+    "
+              >
+                {/* Header */}
+                <div className="flex items-center gap-3 sm:gap-4">
                   <div
-                    key={item}
-                    className="rounded-xl bg-white/10 px-4 py-4 text-sm font-medium backdrop-blur-sm"
+                    className="
+          flex
+          h-11
+          w-11
+          shrink-0
+          items-center
+          justify-center
+          rounded-xl
+          bg-white/15
+
+          sm:h-14
+          sm:w-14
+          sm:rounded-2xl
+        "
                   >
-                    {item}
+                    <HeartIcon />
                   </div>
-                ))}
+
+                  <div>
+                    <p className="text-xs text-[#c4ebfa] sm:text-sm">
+                      Trusted Care
+                    </p>
+
+                    <p className="text-base font-bold sm:text-lg">
+                      Home Healthcare
+                    </p>
+                  </div>
+                </div>
+
+                {/* Services */}
+                <div
+                  className="
+        mt-5
+        grid
+        grid-cols-2
+        gap-2
+
+        sm:mt-6
+        sm:gap-3
+
+        lg:mt-7
+        lg:gap-4
+      "
+                >
+                  {[
+                    "Doctor Visits",
+                    "Nursing Care",
+                    "Physiotherapy",
+                    "Lab Tests",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="
+            rounded-lg
+            bg-white/10
+            px-3
+            py-2.5
+            text-[11px]
+            font-medium
+
+            sm:rounded-xl
+            sm:px-4
+            sm:py-3
+            sm:text-sm
+          "
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Description */}
+                <p
+                  className="
+        mt-5
+        text-[11px]
+        leading-5
+        text-[#c4ebfa]
+
+        sm:mt-6
+        sm:text-sm
+        sm:leading-6
+      "
+                >
+                  Professional healthcare professionals delivered to your home.
+                </p>
               </div>
 
-              {/* Card description */}
-              <p className="mt-7 max-w-[470px] text-sm leading-6 text-[#c4ebfa]">
-                Professional healthcare professionals delivered to your
-                home.
-              </p>
-            </div>
+              {/* =================================================
+      PHYSIOTHERAPY IMAGE
+  ================================================== */}
+              <div
+                className="
+      absolute
+      bottom-[5%]
+      left-0
+      z-30
 
-            {/* -----------------------------------------------
-                PHYSIOTHERAPIST IMAGE
-            ------------------------------------------------ */}
-            <div className="absolute bottom-[6%] left-[1%] z-30 h-[190px] w-[190px] overflow-hidden rounded-full border-[4px] border-white shadow-xl">
-              <img
-                src="https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788767339817/b1--2.png"
+      h-[105px]
+      w-[105px]
 
-                alt="Physiotherapist providing home care"
-                className="h-full w-full object-cover"
-              />
-            </div>
+      overflow-hidden
+      rounded-full
+      border-4
+      border-white
+      shadow-xl
 
-            {/* -----------------------------------------------
-                LAB IMAGE
-            ------------------------------------------------ */}
-            <div className="absolute bottom-[12%] right-[-1%] z-10 h-[180px] w-[180px] overflow-hidden rounded-full border-[4px] border-white shadow-xl">
-              <img
-                src="https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788767402986/b2.webp"
+      sm:h-[150px]
+      sm:w-[150px]
 
-                alt="Healthcare laboratory testing"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            {/* -----------------------------------------------
-                PLUS ICON
-            ------------------------------------------------ */}
-            <div className="absolute right-[-1%] top-[38%] z-30 text-[#a9ddf2]">
-              <PlusIcon />
-            </div>
-
-            {/* -----------------------------------------------
-                LAB FLASK FLOATING ICON
-            ------------------------------------------------ */}
-            <div className="absolute bottom-[18%] right-[-6%] z-40 flex h-14 w-14 items-center justify-center rounded-full bg-white text-[#42a9d9] shadow-md">
-              <FlaskIcon />
-            </div>
-
-            {/* -----------------------------------------------
-                PHYSIO RUNNING ICON
-            ------------------------------------------------ */}
-            <div className="absolute bottom-[4%] left-[28%] z-40 flex h-16 w-16 items-center justify-center rounded-full bg-white text-[#35a7db] shadow-lg">
-              <svg
-                viewBox="0 0 24 24"
-                className="h-9 w-9"
-                fill="currentColor"
+      lg:h-[190px]
+      lg:w-[190px]
+    "
               >
-                <circle cx="14.5" cy="4" r="2" />
+                <img
+                  src="https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788767339817/b1--2.png"
+                  alt="Physiotherapist providing home care"
+                  className="h-full w-full object-cover"
+                />
+              </div>
 
-                <path d="M13.5 7.2 10.8 11l-2.4 2.3-1.4-1.4 2.5-2.7 2.3-3.5z" />
+              {/* =================================================
+      LAB IMAGE
+  ================================================== */}
+              <div
+                className="
+      absolute
+      bottom-[9%]
+      right-0
+      z-10
 
-                <path d="M10.8 11 14 12.5l1.7 3.5-1.7.8-2.1-2.8-2.7-.8z" />
+      h-[100px]
+      w-[100px]
 
-                <path d="m8.2 13.1-3.4 3.7-1.3-1.2 3.2-4z" />
+      overflow-hidden
+      rounded-full
+      border-4
+      border-white
+      shadow-xl
 
-                <path d="m14.4 16.2 2.5 3.3-1.5 1.1-3-3.1z" />
-              </svg>
-            </div>
+      sm:h-[145px]
+      sm:w-[145px]
 
-            {/* -----------------------------------------------
-                CALLBACK CARD
-            ------------------------------------------------ */}
-            <div className="absolute bottom-[2%] right-[7%] z-50 rounded-2xl bg-white px-7 py-5 shadow-xl">
-              <p className="text-sm font-bold text-[#19334d]">
-                Need help?
-              </p>
-
-              <Link
-                href="/contact"
-                className="mt-1 block text-sm font-medium text-[#2da1d5] hover:underline"
+      lg:h-[180px]
+      lg:w-[180px]
+    "
               >
-                Get a callback →
-              </Link>
+                <img
+                  src="https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788767402986/b2.webp"
+                  alt="Healthcare laboratory testing"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
+              {/* Plus icon */}
+              <div
+                className="
+      absolute
+      right-0
+      top-[39%]
+      z-30
+      text-[#a9ddf2]
+
+      sm:right-[1%]
+    "
+              >
+                <PlusIcon />
+              </div>
+
+              {/* Flask */}
+              <div
+                className="
+      absolute
+      bottom-[16%]
+      right-[-1%]
+      z-40
+
+      flex
+      h-10
+      w-10
+      items-center
+      justify-center
+
+      rounded-full
+      bg-white
+      text-[#42a9d9]
+      shadow-md
+
+      sm:h-14
+      sm:w-14
+    "
+              >
+                <FlaskIcon />
+              </div>
+
+              {/* =================================================
+      CALLBACK
+  ================================================== */}
+              <div
+                className="
+      absolute
+      bottom-0
+      right-[8%]
+      z-50
+
+      rounded-xl
+      bg-white
+      px-4
+      py-3
+      shadow-xl
+
+      sm:right-[7%]
+      sm:rounded-2xl
+      sm:px-6
+      sm:py-4
+    "
+              >
+                <p className="text-xs font-bold text-[#19334d] sm:text-sm">
+                  Need help?
+                </p>
+
+                <Link
+                  href="/contact"
+                  className="mt-1 block text-xs font-medium text-[#2da1d5] hover:underline sm:text-sm"
+                >
+                  Get a callback →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
+    </>
   );
 }
