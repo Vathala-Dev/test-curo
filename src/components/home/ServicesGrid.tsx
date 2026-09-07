@@ -5,23 +5,23 @@ import { services } from "@/data/services";
 
 export default function ServicesGrid() {
   return (
-    <section className="py-20">
+    <section className="py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Our Services"
           subtitle="CuroAid provides a comprehensive range of home healthcare services to meet your family's needs"
         />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="group rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+              className="group rounded-2xl border border-blue-100 bg-white p-5 shadow-sm transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 sm:p-6"
             >
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-light-blue text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-light-blue text-primary transition-colors group-hover:bg-primary group-hover:text-white sm:h-14 sm:w-14">
                 <ServiceIcon name={service.icon} />
               </div>
-              <h3 className="text-lg font-semibold text-navy group-hover:text-primary transition-colors">
+              <h3 className="text-base font-semibold text-navy transition-colors group-hover:text-primary sm:text-lg">
                 {service.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">

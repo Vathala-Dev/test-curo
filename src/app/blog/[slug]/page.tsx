@@ -12,8 +12,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!post) return notFound();
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-      <article className="overflow-hidden rounded-[2rem] border border-blue-100 bg-white shadow-sm">
+    <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <article className="overflow-hidden rounded-[1.5rem] border border-blue-100 bg-white shadow-sm sm:rounded-[2rem]">
         {post.imageUrl && (
           <div className="relative h-64 w-full sm:h-80 lg:h-[420px]">
             <img

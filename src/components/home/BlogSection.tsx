@@ -27,13 +27,13 @@ const posts = [
 
 export default function BlogSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="bg-white py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Blogs | Home Healthcare"
           subtitle="Stay informed with practical healthcare tips and expert guidance"
         />
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
             <BlogCard
               key={p.slug}

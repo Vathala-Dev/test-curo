@@ -14,30 +14,30 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-dark py-20 lg:py-28">
+      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-dark py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
               Our Healthcare Services
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-blue-100">
+            <p className="mt-4 text-base leading-relaxed text-blue-100 sm:mt-6 sm:text-lg">
               CuroAid offers a comprehensive catalog of home healthcare services. Browse our offerings below and find the care that fits your needs.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="All Services"
             subtitle="Professional healthcare delivered to your doorstep"
           />
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <div
                 key={service.slug}
-                className="flex flex-col rounded-2xl border border-blue-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-lg"
+                className="flex flex-col rounded-2xl border border-blue-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-lg sm:p-8"
               >
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-light-blue text-primary">
                   <ServiceIcon name={service.icon} className="h-8 w-8" />

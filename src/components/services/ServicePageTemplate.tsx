@@ -49,23 +49,23 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
           <div className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-white/20" />
           <div className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-white/10" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-blue-100">
-              <ServiceIcon name={service.icon} className="h-5 w-5" />
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-xs text-blue-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
+              <ServiceIcon name={service.icon} className="h-4 w-4 sm:h-5 sm:w-5" />
               {service.title}
             </div>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
               {service.heroTitle}
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-blue-100 whitespace-pre-line">
+            <p className="mt-4 text-base leading-relaxed text-blue-100 whitespace-pre-line sm:mt-6 sm:text-lg">
               {service.heroSubtitle}
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button href={primaryCtaHref} variant={isAppDownload ? "white" : "white"}>
+            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+              <Button href={primaryCtaHref} variant={isAppDownload ? "white" : "white"} className="w-full sm:w-auto">
                 {primaryCtaLabel}
               </Button>
-              <Button href={secondaryCtaHref} variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button href={secondaryCtaHref} variant="outline" className="w-full border-white text-white hover:bg-white/10 sm:w-auto">
                 {secondaryCtaLabel}
               </Button>
             </div>
@@ -126,11 +126,11 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
                   : "Healthcare That Comes to You"
             }
           />
-          <div className="mx-auto grid max-w-4xl gap-4">
+          <div className="mx-auto grid max-w-4xl gap-3 sm:gap-4">
             {service.benefits.map((benefit) => (
               <div
                 key={benefit}
-                className="flex items-start gap-4 rounded-xl border border-blue-100 bg-white p-5"
+                className="flex items-start gap-3 rounded-xl border border-blue-100 bg-white p-4 sm:gap-4 sm:p-5"
               >
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                   ✓
@@ -156,7 +156,7 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
             }
             light
           />
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {service.howItWorks.map((step) => (
               <div key={step.step} className="relative text-center">
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-xl font-bold text-white">
@@ -200,14 +200,14 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
                 ? "Compassionate Care. Professional Support. Right at Your Doorstep. CuroAid makes it easier for you and your loved ones to access reliable nursing support without leaving the comfort of home."
                 : "Professional physiotherapy support designed to help you recover, improve movement, and regain confidence in the comfort of your own home."}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button href={primaryCtaHref} variant="white">
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
+            <Button href={primaryCtaHref} variant="white" className="w-full sm:w-auto">
               {service.slug === "home-doctor" ? "Book Free Consultation" : service.slug === "nursing-services" ? "Book Home Nursing Service" : "Book Physiotherapy Session"}
             </Button>
             <Button
               href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
               variant="outline"
-              className="border-white text-white hover:bg-white/10"
+              className="w-full border-white text-white hover:bg-white/10 sm:w-auto"
             >
               Call Now
             </Button>

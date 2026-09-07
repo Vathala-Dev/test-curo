@@ -235,20 +235,20 @@ export default function HeroSection() {
           <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[#0d83c6]/5 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto flex min-h-[680px] max-w-[1500px] items-center px-6 py-14 sm:px-10 lg:px-16 lg:py-20">
-          <div className="grid w-full items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-8">
+        <div className="relative mx-auto flex min-h-[620px] max-w-[1500px] items-center px-4 py-10 sm:px-6 sm:py-14 lg:px-16 lg:py-20">
+          <div className="grid w-full items-center gap-8 sm:gap-10 lg:grid-cols-[1fr_1fr] lg:gap-12">
             {/* =====================================================
               LEFT SIDE
           ====================================================== */}
             <div className="relative z-10 max-w-[700px]">
               {/* Badge */}
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-[#dff4ff] px-5 py-2.5 text-sm font-semibold text-[#258fc4]">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#3aaee0]" />
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#dff4ff] px-3 py-2 text-[11px] font-semibold text-[#258fc4] sm:mb-7 sm:px-5 sm:py-2.5 sm:text-sm">
+                <span className="h-2 w-2 rounded-full bg-[#3aaee0] sm:h-2.5 sm:w-2.5" />
                 Healthcare At Your Doorstep
               </div>
 
               {/* Heading */}
-              <h1 className="text-[48px] font-extrabold leading-[1.03] tracking-[-0.035em] text-[#102d49] sm:text-[58px] lg:text-[68px]">
+              <h1 className="text-4xl font-extrabold leading-[1.02] tracking-[-0.035em] text-[#102d49] sm:text-5xl lg:text-[68px]">
                 Professional
                 <br />
                 Healthcare Services
@@ -257,18 +257,18 @@ export default function HeroSection() {
               </h1>
 
               {/* Description */}
-              <p className="mt-7 max-w-[690px] text-[17px] leading-[1.65] text-[#526477] sm:text-[19px]">
+              <p className="mt-5 max-w-[690px] text-sm leading-6 text-[#526477] sm:mt-7 sm:text-base sm:leading-7 lg:text-[17px] lg:leading-[1.65]">
                 From doctor visits and nursing to physiotherapy, elder care,
                 blood tests, and more — CuroAid delivers quality healthcare
                 services at your doorstep.
               </p>
 
               {/* Buttons */}
-              <div className="mt-9 flex flex-wrap items-center gap-4">
+              <div className="mt-6 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                 {/* Book Now */}
                 <Button
                   onClick={() => setBookingOpen(true)}
-                  className="rounded-xl bg-[#35a7db] px-7 py-4 text-base font-semibold shadow-lg shadow-[#35a7db]/20 transition hover:-translate-y-0.5 hover:bg-[#2699ce]"
+                  className="w-full rounded-xl bg-[#35a7db] px-5 py-3 text-sm font-semibold shadow-lg shadow-[#35a7db]/20 transition hover:-translate-y-0.5 hover:bg-[#2699ce] sm:w-auto sm:px-7 sm:py-4 sm:text-base"
                 >
                   Book Now
                 </Button>
@@ -278,7 +278,7 @@ export default function HeroSection() {
                   href="https://play.google.com/store/apps/details?id=com.androidVathalaUser"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-[64px] items-center gap-3 rounded-xl border border-[#dce4e9] bg-white px-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                  className="inline-flex h-[58px] w-full items-center justify-center gap-3 rounded-xl border border-[#dce4e9] bg-white px-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:h-[64px] sm:w-auto sm:justify-start sm:px-5"
                 >
                   <GooglePlayIcon />
 
@@ -298,7 +298,7 @@ export default function HeroSection() {
                   href="https://apps.apple.com/us/app/vathala/id6474188887"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-[64px] items-center gap-3 rounded-xl border border-[#dce4e9] bg-white px-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                  className="inline-flex h-[58px] w-full items-center justify-center gap-3 rounded-xl border border-[#dce4e9] bg-white px-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:h-[64px] sm:w-auto sm:justify-start sm:px-5"
                 >
                   <AppStoreIcon />
 

@@ -25,19 +25,19 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-light-blue py-20">
+    <section className="bg-light-blue py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="How It Works"
           subtitle="Getting started with CuroAid is simple and straightforward"
         />
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((item) => (
-            <div key={item.step} className="text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-xl font-bold text-white shadow-lg shadow-primary/30">
+            <div key={item.step} className="rounded-2xl bg-white/60 p-5 text-center shadow-sm sm:p-6">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white shadow-lg shadow-primary/30 sm:h-14 sm:w-14 sm:text-xl">
                 {item.step}
               </div>
-              <h3 className="text-lg font-semibold text-navy">{item.title}</h3>
+              <h3 className="text-base font-semibold text-navy sm:text-lg">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">
                 {item.description}
               </p>

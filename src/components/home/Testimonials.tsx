@@ -23,12 +23,12 @@ const testimonials = [
 
 export default function Testimonials() {
 	return (
-		<section className="py-20 bg-light-blue">
+		<section className="bg-light-blue py-12 sm:py-16 lg:py-20">
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<SectionHeading title="Testimonials" subtitle="Real experiences from patients and families" />
-				<div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				<div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 					{testimonials.map((t) => (
-						<div key={t.name} className="rounded-2xl bg-white p-6 shadow-sm">
+						<div key={t.name} className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
 							<p className="text-sm leading-relaxed text-muted">“{t.quote}”</p>
 							<div className="mt-4">
 								<p className="text-sm font-semibold text-navy">{t.name}</p>

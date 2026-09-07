@@ -34,36 +34,36 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-dark py-20 lg:py-28">
+      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-dark py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
               About CuroAid
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-blue-100">
+            <p className="mt-4 text-base leading-relaxed text-blue-100 sm:mt-6 sm:text-lg">
               CuroAid is a home healthcare platform dedicated to connecting families with qualified healthcare professionals. We believe quality medical care should be accessible, convenient, and delivered with compassion — right where you feel most comfortable: at home.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
               <SectionHeading
                 title="Our Mission"
                 subtitle="Making home healthcare accessible for everyone"
                 centered={false}
               />
-              <p className="text-lg leading-relaxed text-muted">
+              <p className="text-base leading-relaxed text-muted sm:text-lg">
                 Our mission is to bridge the gap between patients and quality healthcare by delivering professional medical services at home. Whether you need a doctor visit, nursing care, physiotherapy, elder care support, or diagnostic services, CuroAid coordinates the right professionals for your needs.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-muted">
+              <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
                 We serve individuals and families who prefer home-based care — including elderly patients, post-operative recovery cases, people with mobility limitations, and busy professionals seeking convenient healthcare access.
               </p>
             </div>
-            <div className="rounded-2xl bg-light-blue p-8 lg:p-12">
+            <div className="rounded-2xl bg-light-blue p-5 sm:p-8 lg:p-12">
               <h3 className="text-2xl font-bold text-navy">Why Home Healthcare?</h3>
               <ul className="mt-6 space-y-4">
                 {[
