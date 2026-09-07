@@ -57,30 +57,30 @@ export default function HeroSection() {
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-primary-dark/5 blur-3xl" />
       </div>
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:flex lg:items-center lg:gap-16 lg:px-8 lg:py-28">
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:flex lg:items-center lg:gap-16 lg:px-8 lg:py-28">
         <div className="flex-1">
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-2 text-xs font-medium text-primary sm:px-4 sm:text-sm">
             <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
             Healthcare At Your Doorstep
           </div>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-navy sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 text-3xl font-bold tracking-tight text-navy sm:mt-6 sm:text-4xl lg:text-6xl">
             Proffessional Healthcare Services{" "}
             <span className="text-primary">At Home</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted sm:mt-6 sm:text-base lg:text-lg">
             From doctor visits and nursing to physiotherapy, elder care, blood tests, and more — CuroAid delivers quality healthcare services at your doorstep.
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="mt-7 flex flex-col gap-4 sm:mt-8 sm:flex-row sm:items-center">
             <Button onClick={() => setBookingOpen(true)} className="w-full sm:w-auto">
               Book Now
             </Button>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="https://play.google.com/store/apps/details?id=YOUR_ANDROID_PACKAGE"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                className="inline-flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3 py-2.5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:px-4 sm:py-3"
               >
                 <GooglePlayIcon />
                 <span className="leading-none text-left">
