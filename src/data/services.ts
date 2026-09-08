@@ -14,6 +14,11 @@ export interface FAQ {
   answer: string;
 }
 
+export interface ServiceBenefitDetail {
+  title: string;
+  description: string;
+}
+
 export interface ServiceData {
   slug: string;
   title: string;
@@ -25,6 +30,7 @@ export interface ServiceData {
   description: string;
   features: ServiceFeature[];
   benefits: string[];
+  benefitDetails?: ServiceBenefitDetail[];
   howItWorks: HowItWorksStep[];
   faqs: FAQ[];
   seoTitle: string;
@@ -48,7 +54,7 @@ export const services: ServiceData[] = [
     heroSubtitle:
       "Get professional doctor consultations and medical care without the hassle of visiting a hospital.",
     description:
-      "At CuroAid, we believe quality healthcare should be accessible, convenient, and centred around the patient. Our Home Doctor Service brings professional medical expertise to your doorstep, with personalised care tailored to your individual health needs.",
+      "At CuroAid Home Healthcare, we believe quality healthcare should be accessible, convenient, and centred around the patient. Our Home Doctor Service brings professional medical expertise to your doorstep, with personalised care tailored to your individual health needs.",
     features: [
       {
         title: "General Physician Consultation",
@@ -99,6 +105,38 @@ export const services: ServiceData[] = [
       "Convenient & Hassle-Free",
       "Care for Every Stage",
       "Trusted Healthcare Support",
+    ],
+    benefitDetails: [
+      {
+        title: "Medical Care Designed Around You",
+        description:
+          "Your healthcare should be convenient, comfortable, and personal. CuroAid Home Healthcare brings professional medical care to your doorstep, allowing you and your loved ones to receive attention without the inconvenience of travelling to a hospital or clinic.",
+      },
+      {
+        title: "Comfortable Care at Home",
+        description:
+          "Receive medical attention in the familiar surroundings of your own home.",
+      },
+      {
+        title: "Personalised Attention",
+        description:
+          "Every visit is focused on understanding your individual health concerns and needs.",
+      },
+      {
+        title: "Convenient & Hassle-Free",
+        description:
+          "Skip unnecessary travel, waiting rooms, and the stress of arranging a clinic visit.",
+      },
+      {
+        title: "Care for Every Stage",
+        description:
+          "From everyday health concerns to elderly care and follow-up support, get appropriate medical guidance at home.",
+      },
+      {
+        title: "Trusted Healthcare Support",
+        description:
+          "CuroAid is committed to making quality healthcare more accessible while keeping patient comfort at the centre of every visit.",
+      },
     ],
     howItWorks: [
       {
@@ -163,7 +201,7 @@ export const services: ServiceData[] = [
     heroSubtitle:
       "Professional Nursing Care, Right at Your Doorstep\n\nGet compassionate and professional nursing support at home, tailored to your health needs and delivered in the comfort of your own surroundings.",
     description:
-      "At CuroAid, we believe quality healthcare should extend beyond hospitals and clinics. Our Home Nursing Service provides professional nursing support at your doorstep, helping patients receive the care, comfort, and attention they need at home.\n\nWhether you need short-term nursing assistance, post-hospitalisation support, elderly care, or ongoing healthcare supervision, our services are designed around your individual needs.",
+      "At CuroAid Home Healthcare, we believe quality healthcare should extend beyond hospitals and clinics. Our Home Nursing Service provides professional nursing support at your doorstep, helping patients receive the care, comfort, and attention they need at home.\n\nWhether you need short-term nursing assistance, post-hospitalisation support, elderly care, or ongoing healthcare supervision, our services are designed around your individual needs.",
     features: [
       {
         title: "Elderly Nursing Care",
@@ -223,6 +261,38 @@ export const services: ServiceData[] = [
       "Support for Recovery",
       "Care for Elderly & Dependent Patients",
       "Convenient & Reliable",
+    ],
+    benefitDetails: [
+      {
+        title: "Professional Nursing Support",
+        description:
+          "Receive nursing assistance designed to support your healthcare and recovery needs at home.",
+      },
+      {
+        title: "Personalised Care",
+        description:
+          "Our care approach focuses on the individual needs, condition, comfort, and routine of each patient.",
+      },
+      {
+        title: "Comfortable Home Environment",
+        description:
+          "Receive care in familiar surroundings without the need for frequent travel to hospitals or clinics.",
+      },
+      {
+        title: "Support for Recovery",
+        description:
+          "From post-surgical recovery to post-hospitalisation care, get the nursing support you need during your recovery journey.",
+      },
+      {
+        title: "Care for Elderly & Dependent Patients",
+        description:
+          "Dedicated support for senior citizens, bedridden patients, and individuals who need assistance with everyday healthcare needs.",
+      },
+      {
+        title: "Convenient & Reliable",
+        description:
+          "Access professional nursing support at home while reducing the stress and inconvenience associated with repeated hospital visits.",
+      },
     ],
     howItWorks: [
       {
@@ -287,7 +357,7 @@ export const services: ServiceData[] = [
     heroSubtitle:
       "Professional Physiotherapy, Right at Your Doorstep\n\nGet personalised physiotherapy care at home with professional support designed to improve mobility, manage pain, build strength, and support a comfortable recovery in familiar surroundings.",
     description:
-      "At CuroAid, we make physiotherapy more convenient by bringing professional rehabilitation support directly to your home. Our Physiotherapy at Home Service is designed to help individuals recover, improve movement, manage pain, and regain independence without the need for frequent visits to a clinic.\n\nWhether you are recovering from an injury, surgery, illness, or dealing with mobility difficulties, our physiotherapy services are tailored to your individual condition, goals, and recovery needs.",
+      "At CuroAid Home Healthcare, we make physiotherapy more convenient by bringing professional rehabilitation support directly to your home. Our Physiotherapy at Home Service is designed to help individuals recover, improve movement, manage pain, and regain independence without the need for frequent visits to a clinic.\n\nWhether you are recovering from an injury, surgery, illness, or dealing with mobility difficulties, our physiotherapy services are tailored to your individual condition, goals, and recovery needs.",
     features: [
       {
         title: "Post-Surgical Physiotherapy",
@@ -348,6 +418,38 @@ export const services: ServiceData[] = [
       "Personalised treatment based on your condition and goals",
       "Convenient support for recovery and independence",
     ],
+    benefitDetails: [
+      {
+        title: "Professional Physiotherapy Support",
+        description:
+          "Receive physiotherapy assistance focused on your condition, mobility, recovery, and rehabilitation needs.",
+      },
+      {
+        title: "Personalised Treatment Approach",
+        description:
+          "Our physiotherapy care is tailored to your individual condition, physical abilities, recovery goals, and daily routine.",
+      },
+      {
+        title: "Comfortable Home Environment",
+        description:
+          "Receive physiotherapy in the comfort of your own home without the inconvenience of travelling to a clinic for every session.",
+      },
+      {
+        title: "Support for Recovery & Rehabilitation",
+        description:
+          "From post-surgical recovery to injury rehabilitation, get the support you need throughout your recovery journey.",
+      },
+      {
+        title: "Care for Seniors & Mobility Needs",
+        description:
+          "Access convenient physiotherapy support for elderly individuals and those experiencing mobility, balance, or movement difficulties.",
+      },
+      {
+        title: "Convenient & Reliable",
+        description:
+          "Schedule physiotherapy sessions at home based on your needs, helping make regular rehabilitation easier and more convenient.",
+      },
+    ],
     howItWorks: [
       {
         step: 1,
@@ -359,19 +461,19 @@ export const services: ServiceData[] = [
         step: 2,
         title: "Choose Your Service",
         description:
-          "Select Physiotherapy at Home and share the details of your condition or treatment needs.",
+          "Select Physiotherapy at Home and provide the required details about the patient's condition and physiotherapy needs.",
       },
       {
         step: 3,
         title: "Select Date & Time",
         description:
-          "Choose a suitable time for your physiotherapy session at home.",
+          "Choose your preferred date and convenient time slot for the physiotherapy session.",
       },
       {
         step: 4,
         title: "Confirm Your Booking",
         description:
-          "Review your booking details and confirm your physiotherapy appointment.",
+          "Review the service details and confirm your physiotherapy booking.",
       },
     ],
     faqs: [

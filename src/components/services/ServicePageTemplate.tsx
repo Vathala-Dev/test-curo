@@ -44,26 +44,26 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary-dark via-primary to-primary-dark">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f3150] via-[#1b6e9d] to-[#1e8ec7]">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-white/20" />
           <div className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-white/10" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
             <div className="max-w-3xl">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-xs text-blue-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs font-medium text-blue-50 backdrop-blur-sm sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
                 <ServiceIcon name={service.icon} className="h-4 w-4 sm:h-5 sm:w-5" />
                 {service.title}
               </div>
-              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+              <h1 className="text-3xl font-black tracking-[-0.04em] text-white sm:text-4xl lg:text-6xl">
                 {service.heroTitle}
               </h1>
-              <p className="mt-4 text-base leading-relaxed text-blue-100 whitespace-pre-line sm:mt-6 sm:text-lg">
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-blue-100 whitespace-pre-line sm:mt-6 sm:text-lg">
                 {service.heroSubtitle}
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
-                <Button href={primaryCtaHref} variant={isAppDownload ? "white" : "white"} className="w-full sm:w-auto">
+                <Button href={primaryCtaHref} variant="white" className="w-full sm:w-auto">
                   {primaryCtaLabel}
                 </Button>
                 <Button href={secondaryCtaHref} variant="outline" className="w-full border-white text-white hover:bg-white/10 sm:w-auto">
@@ -73,7 +73,7 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
             </div>
 
             <div className="relative">
-              <div className="overflow-hidden rounded-[2rem] border border-white/20 bg-white/10 p-3 shadow-2xl shadow-[#123b52]/20 backdrop-blur-sm">
+              <div className="overflow-hidden rounded-[2rem] border border-white/20 bg-white/10 p-3 shadow-[0_30px_80px_rgba(12,47,76,0.35)] backdrop-blur-sm">
                 <img
                   src={service.image ?? "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80"}
                   alt={service.title}
@@ -88,15 +88,20 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
       {/* Description */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading title={descriptionTitleMap[service.slug] ?? `About ${service.title}`} centered={false} />
-            <p className="text-lg leading-relaxed text-muted whitespace-pre-line">{service.description}</p>
+          <div className="mx-auto max-w-4xl rounded-[2rem] border border-blue-100 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+            <SectionHeading title={descriptionTitleMap[service.slug] ?? `About ${service.title}`} centered={false} className="mb-5" />
+            <p className="text-base leading-8 text-muted whitespace-pre-line sm:text-lg">{service.description}</p>
+            <div className="mt-8 flex justify-start">
+              <Button href={primaryCtaHref} className="w-full sm:w-auto">
+                {primaryCtaLabel}
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="bg-light-blue py-20">
+      <section className="bg-[#f4fbff] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title={featuresTitleMap[service.slug] ?? "What We Offer"}
@@ -106,16 +111,16 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
                 ? "From recovery and rehabilitation to long-term healthcare support, CuroAid provides personalised nursing care to help patients and families manage healthcare needs comfortably at home."
                 : "From pain management and rehabilitation to mobility improvement and recovery support, CuroAid provides personalised physiotherapy care based on your individual healthcare needs."}
           />
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {service.features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="group rounded-[1.5rem] border border-blue-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
                   <ServiceIcon name={service.icon} className="h-6 w-6" />
                 </div>
-                <h3 className="text-lg font-semibold text-navy">{feature.title}</h3>
+                <h3 className="text-lg font-bold text-navy">{feature.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   {feature.description}
                 </p>
@@ -135,27 +140,47 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
                 ? "Healthcare That Comes to You"
                 : service.slug === "nursing-services"
                   ? "Healthcare becomes easier when professional support is available where you are most comfortable."
-                  : "Healthcare That Comes to You"
+                  : "Recovery can be easier when professional physiotherapy is available in a familiar and comfortable environment."
             }
           />
-          <div className="mx-auto grid max-w-4xl gap-3 sm:gap-4">
-            {service.benefits.map((benefit) => (
-              <div
-                key={benefit}
-                className="flex items-start gap-3 rounded-xl border border-blue-100 bg-white p-4 sm:gap-4 sm:p-5"
-              >
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-                  ✓
+
+          {service.benefitDetails && service.benefitDetails.length > 0 ? (
+            <div className="mx-auto grid max-w-5xl gap-5 sm:gap-6">
+              {service.benefitDetails.map((benefit) => (
+                <div
+                  key={benefit.title}
+                  className="flex items-start gap-4 rounded-[1.5rem] border border-blue-100 bg-white p-5 shadow-sm sm:p-6"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                    ✓
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-navy sm:text-2xl">{benefit.title}</h3>
+                    <p className="mt-2 text-base leading-relaxed text-muted">{benefit.description}</p>
+                  </div>
                 </div>
-                <p className="text-navy leading-relaxed">{benefit}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="mx-auto grid max-w-4xl gap-3 sm:gap-4">
+              {service.benefits.map((benefit) => (
+                <div
+                  key={benefit}
+                  className="flex items-start gap-3 rounded-xl border border-blue-100 bg-white p-4 sm:gap-4 sm:p-5"
+                >
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                    ✓
+                  </div>
+                  <p className="text-navy leading-relaxed">{benefit}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="bg-navy py-20">
+      <section className="bg-[#0d2940] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title={howItWorksTitleMap[service.slug] ?? "How It Works"}
@@ -168,14 +193,17 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
             }
             light
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {service.howItWorks.map((step) => (
-              <div key={step.step} className="relative text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-xl font-bold text-white">
+              <div
+                key={step.step}
+                className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 text-left shadow-lg shadow-[#071f2f]/20"
+              >
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">
                   {step.step}
                 </div>
                 <h3 className="text-lg font-semibold text-white">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-blue-200">
+                <p className="mt-2 text-sm leading-relaxed text-blue-100">
                   {step.description}
                 </p>
               </div>
@@ -184,28 +212,19 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title={service.slug === "home-doctor" ? "FAQ" : service.slug === "nursing-services" ? "FAQ - Home Nursing Services" : "FAQ"}
-            subtitle="Common questions about this service"
-          />
-          <FAQSection faqs={service.faqs} />
-        </div>
-      </section>
+
 
       {/* CTA */}
-      <section className="bg-gradient-to-r from-primary to-primary-dark py-20">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+      <section className="bg-gradient-to-r from-[#1a7cb3] to-[#123b52] py-20">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">
             {service.slug === "home-doctor"
               ? "Need Medical Care at Home?"
               : service.slug === "nursing-services"
                 ? "NEED PROFESSIONAL NURSING CARE AT HOME?"
                 : "Need Physiotherapy Support at Home?"}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-blue-100">
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-blue-100">
             {service.slug === "home-doctor"
               ? "CuroAid brings trusted healthcare to your doorstep. Book a convenient home doctor visit and take the next step towards better, more accessible healthcare."
               : service.slug === "nursing-services"
@@ -223,6 +242,19 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
             >
               Call Now
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title={service.slug === "home-doctor" ? "FAQ" : service.slug === "nursing-services" ? "FAQ - Home Nursing Services" : "FAQ"}
+            subtitle="Common questions about this service"
+          />
+          <div className="rounded-[2rem] border border-blue-100 bg-[#f9fcff] p-4 shadow-sm sm:p-6">
+            <FAQSection faqs={service.faqs} />
           </div>
         </div>
       </section>
