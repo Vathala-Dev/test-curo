@@ -50,24 +50,36 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
           <div className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-white/10" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
-          <div className="max-w-3xl">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-xs text-blue-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
-              <ServiceIcon name={service.icon} className="h-4 w-4 sm:h-5 sm:w-5" />
-              {service.title}
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="max-w-3xl">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-xs text-blue-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
+                <ServiceIcon name={service.icon} className="h-4 w-4 sm:h-5 sm:w-5" />
+                {service.title}
+              </div>
+              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+                {service.heroTitle}
+              </h1>
+              <p className="mt-4 text-base leading-relaxed text-blue-100 whitespace-pre-line sm:mt-6 sm:text-lg">
+                {service.heroSubtitle}
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+                <Button href={primaryCtaHref} variant={isAppDownload ? "white" : "white"} className="w-full sm:w-auto">
+                  {primaryCtaLabel}
+                </Button>
+                <Button href={secondaryCtaHref} variant="outline" className="w-full border-white text-white hover:bg-white/10 sm:w-auto">
+                  {secondaryCtaLabel}
+                </Button>
+              </div>
             </div>
-            <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              {service.heroTitle}
-            </h1>
-            <p className="mt-4 text-base leading-relaxed text-blue-100 whitespace-pre-line sm:mt-6 sm:text-lg">
-              {service.heroSubtitle}
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
-              <Button href={primaryCtaHref} variant={isAppDownload ? "white" : "white"} className="w-full sm:w-auto">
-                {primaryCtaLabel}
-              </Button>
-              <Button href={secondaryCtaHref} variant="outline" className="w-full border-white text-white hover:bg-white/10 sm:w-auto">
-                {secondaryCtaLabel}
-              </Button>
+
+            <div className="relative">
+              <div className="overflow-hidden rounded-[2rem] border border-white/20 bg-white/10 p-3 shadow-2xl shadow-[#123b52]/20 backdrop-blur-sm">
+                <img
+                  src={service.image ?? "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80"}
+                  alt={service.title}
+                  className="h-[320px] w-full rounded-[1.5rem] object-cover sm:h-[400px]"
+                />
+              </div>
             </div>
           </div>
         </div>

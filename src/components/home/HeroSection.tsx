@@ -248,7 +248,7 @@ export default function HeroSection() {
               </div>
 
               {/* Heading */}
-              <h1 className="text-4xl font-extrabold leading-[1.02] tracking-[-0.035em] text-[#102d49] sm:text-5xl lg:text-[68px]">
+              <h1 className="text-[2rem] font-extrabold leading-[1.02] tracking-[-0.035em] text-[#102d49] sm:text-5xl lg:text-[68px]">
                 Professional
                 <br />
                 Healthcare Services

@@ -33,29 +33,47 @@ export default function ServicesPage() {
             title="All Services"
             subtitle="Professional healthcare delivered to your doorstep"
           />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.slug}
-                className="flex flex-col rounded-2xl border border-blue-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-lg sm:p-8"
+                href={`/services/${service.slug}`}
+                className="group overflow-hidden rounded-[1.75rem] border border-blue-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-light-blue text-primary">
-                  <ServiceIcon name={service.icon} className="h-8 w-8" />
+                <div className="relative h-60 overflow-hidden">
+                  <img
+                    src={service.image ?? "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80"}
+                    alt={service.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#123b52]/80 via-[#123b52]/15 to-transparent" />
+                  <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-white/90 text-primary shadow-sm backdrop-blur-sm">
+                    <ServiceIcon name={service.icon} className="h-5 w-5" />
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
+                    <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-navy">
+                      Care Service
+                    </span>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-lg text-primary shadow-sm">
+                      →
+                    </span>
+                  </div>
                 </div>
-                <h2 className="text-xl font-bold text-navy">{service.title}</h2>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
-                  {service.shortDescription}
-                </p>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-                >
-                  View Details
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
-              </div>
+
+                <div className="p-6">
+                  <h2 className="text-2xl font-bold text-navy">{service.title}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    {service.shortDescription}
+                  </p>
+
+                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    View Details
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

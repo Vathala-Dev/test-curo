@@ -19,6 +19,7 @@ export interface ServiceData {
   title: string;
   shortDescription: string;
   icon: string;
+  image?: string;
   heroTitle: string;
   heroSubtitle: string;
   description: string;
@@ -41,6 +42,8 @@ export const services: ServiceData[] = [
     shortDescription:
       "Expert medical care at home for consultations, follow-ups, and everyday health needs.",
     icon: "doctor",
+    image:
+      "https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788846761827/docto.jpg",
     heroTitle: "Doctor at Home",
     heroSubtitle:
       "Get professional doctor consultations and medical care without the hassle of visiting a hospital.",
@@ -154,6 +157,8 @@ export const services: ServiceData[] = [
     shortDescription:
       "Compassionate nursing support at home for recovery, chronic care, and daily health needs.",
     icon: "nursing",
+    image:
+      "https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788847085556/nurse.jpg",
     heroTitle: "Home Nursing Services",
     heroSubtitle:
       "Professional Nursing Care, Right at Your Doorstep\n\nGet compassionate and professional nursing support at home, tailored to your health needs and delivered in the comfort of your own surroundings.",
@@ -276,6 +281,8 @@ export const services: ServiceData[] = [
     shortDescription:
       "Professional physiotherapy at home for pain relief, mobility, and recovery support.",
     icon: "physio",
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80",
     heroTitle: "Physiotherapy at Home",
     heroSubtitle:
       "Professional Physiotherapy, Right at Your Doorstep\n\nGet personalised physiotherapy care at home with professional support designed to improve mobility, manage pain, build strength, and support a comfortable recovery in familiar surroundings.",
@@ -398,6 +405,8 @@ export const services: ServiceData[] = [
     shortDescription:
       "Dedicated caregivers and healthcare support for seniors living at home.",
     icon: "elder",
+    image:
+      "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=900&q=80",
     heroTitle: "Compassionate Elder Care At Home",
     heroSubtitle:
       "Professional caregivers provide daily assistance, companionship, and health support so your loved ones can age comfortably at home.",
@@ -484,6 +493,8 @@ export const services: ServiceData[] = [
     shortDescription:
       "Certified yoga instructors for personalized wellness sessions at your home.",
     icon: "yoga",
+    image:
+      "https://images.unsplash.com/photo-1544367567-0f2fcbf3c3c4?auto=format&fit=crop&w=900&q=80",
     heroTitle: "Yoga & Wellness At Home",
     heroSubtitle:
       "Practice yoga with certified instructors in the privacy and comfort of your home, tailored to your fitness level and health goals.",
@@ -570,6 +581,8 @@ export const services: ServiceData[] = [
     shortDescription:
       "Professional wound assessment, dressing, and healing support at home.",
     icon: "wound",
+    image:
+      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80",
     heroTitle: "Expert Wound Care At Home",
     heroSubtitle:
       "Skilled healthcare professionals provide wound assessment, dressing changes, and healing monitoring in the comfort of your home.",
@@ -656,6 +669,8 @@ export const services: ServiceData[] = [
     shortDescription:
       "Licensed veterinarians for pet health check-ups and medical care at home.",
     icon: "vet",
+    image:
+      "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80",
     heroTitle: "Veterinary Care At Home",
     heroSubtitle:
       "Licensed veterinarians visit your home to provide health check-ups, treatment, and medical care for your pets in a stress-free environment.",
@@ -742,6 +757,8 @@ export const services: ServiceData[] = [
     shortDescription:
       "Convenient home sample collection for laboratory blood tests and health screenings.",
     icon: "blood",
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80",
     heroTitle: "Blood Tests At Home",
     heroSubtitle:
       "Certified phlebotomists collect blood samples at your home for lab testing — no clinic visit required.",
@@ -828,6 +845,8 @@ export const services: ServiceData[] = [
     shortDescription:
       "Additional home healthcare services tailored to your unique needs.",
     icon: "other",
+    image:
+      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80",
     heroTitle: "Additional Healthcare Services",
     heroSubtitle:
       "Beyond our core offerings, CuroAid provides a range of supplementary home healthcare services customized to your requirements.",
