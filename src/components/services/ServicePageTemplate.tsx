@@ -233,6 +233,7 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
             <Button href={primaryCtaHref} variant="white" className="w-full sm:w-auto">
+              {/* onClick={() => setBookingOpen(true)} */}
               {service.slug === "home-doctor" ? "Book Free Consultation" : service.slug === "nursing-services" ? "Book Home Nursing Service" : "Book Physiotherapy Session"}
             </Button>
             <Button

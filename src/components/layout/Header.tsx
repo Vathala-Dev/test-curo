@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 import Button from "@/components/ui/Button";
 import BookingModal from "@/components/ui/BookingModal";
 import { cn } from "@/lib/utils";
-
+import Image from "next/image";
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -17,10 +17,18 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-blue-100 bg-white/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-lg font-bold text-white">
-            C
-          </div>
-          <span className="text-xl font-bold text-navy">{siteConfig.name}</span>
+          <Image
+            src="https://vathala-bucket.s3.ap-south-1.amazonaws.com/1788850749197/curologo.jpg"
+            alt={`${siteConfig.name} logo`}
+            width={160}
+            height={50}
+            className="h-10 w-auto object-contain"
+            priority
+          />
+
+          <span className="text-xl font-bold text-trust-blue sm:text-2xl lg:text-3xl">
+            {siteConfig.name}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">

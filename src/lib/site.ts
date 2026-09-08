@@ -15,10 +15,19 @@ export const siteConfig = {
   },
 } as const;
 
+// export const colors = {
+//   primary: "#2563EB",
+//   darkBlue: "#1E3A8A",
+//   navy: "#172554",
+//   trustBlue: "#41C0BB",
+//   lightBlue: "#EFF6FF",
+//   white: "#FFFFFF",
+// } as const;
 export const colors = {
-  primary: "#2563EB",
-  darkBlue: "#1E3A8A",
-  navy: "#172554",
-  lightBlue: "#EFF6FF",
+  primary: "#40BEBB",      // Main teal from logo
+  darkBlue: "#319FA8",     // Deep teal-blue
+  navy: "#174C5A",         // Dark text / headings
+  trustBlue: "#6DBFCC",    // Aqua blue from logo
+  lightBlue: "#EFFBFA",    // Very light teal background
   white: "#FFFFFF",
 } as const;
